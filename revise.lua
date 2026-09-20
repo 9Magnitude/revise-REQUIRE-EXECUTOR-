@@ -1,156 +1,230 @@
-local revise_Require_Executor = Instance.new("ScreenGui")
-revise_Require_Executor.Name = "revise Require Executor"
-revise_Require_Executor.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+-- GUI to Lua
+-----
+-- Version: 2.0.
+-- Made by chrisopdemobiel.
 
-local textButton = Instance.new("TextButton")
-textButton.Name = "TextButton"
-textButton.FontFace = Font.new(
-    "rbxassetid://11702779409",
-    Enum.FontStyle.Normal,
-    Enum.FontWeight.Heavy
-)
-textButton.TextColor3 = Color3.new(0.761, 0.765, 1)
-textButton.Text = "revise"
-textButton.BackgroundColor3 = Color3.new(0.318, 0.333, 0.435)
-textButton.TextSize = 18
-textButton.Position = UDim2.new(0.482, 0, 0.875, 0)
-textButton.RichText = true
-textButton.BorderColor3 = Color3.new()
-textButton.BorderSizePixel = 0
-textButton.Size = UDim2.new(0, 52, 0, 52)
-textButton.Parent = revise_Require_Executor
+-- Instances:
 
-local localScript = Instance.new("LocalScript")
-localScript.Name = "LocalScript"
-localScript.Parent = textButton
+local reviseRequireExecutor = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+local TEXTLOGO = Instance.new("TextLabel")
+local BG = Instance.new("Frame")
+local Execute = Instance.new("TextButton")
+local TextButton = Instance.new("TextButton")
 
-local uICorner = Instance.new("UICorner")
-uICorner.Name = "UICorner"
-uICorner.Parent = textButton
+--Properties:
 
-local smooth_GUI_Dragging = Instance.new("LocalScript")
-smooth_GUI_Dragging.Name = "Smooth GUI Dragging"
-smooth_GUI_Dragging.Parent = textButton
+reviseRequireExecutor.Name = "revise Require Executor"
+reviseRequireExecutor.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+reviseRequireExecutor.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-local frame = Instance.new("Frame")
-frame.Name = "Frame"
-frame.BackgroundColor3 = Color3.new(0.267, 0.267, 0.349)
-frame.Position = UDim2.new(0.265, 0, 0.319, 0)
-frame.BorderColor3 = Color3.new()
-frame.BorderSizePixel = 0
-frame.Size = UDim2.new(0, 551, 0, 30)
-frame.Parent = revise_Require_Executor
+Frame.Parent = reviseRequireExecutor
+Frame.BackgroundColor3 = Color3.fromRGB(68, 68, 89)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.26543209, 0, 0.318668246, 0)
+Frame.Size = UDim2.new(0, 551, 0, 30)
 
-local execute = Instance.new("TextButton")
-execute.Name = "Execute"
-execute.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
-execute.TextColor3 = Color3.new(1, 1, 1)
-execute.BorderColor3 = Color3.new()
-execute.Text = "Execute"
-execute.BackgroundColor3 = Color3.new(0.337, 0.345, 0.435)
-execute.Position = UDim2.new(0.797, 0, 8.6, 0)
-execute.BorderSizePixel = 0
-execute.TextSize = 14
-execute.Size = UDim2.new(0, 104, 0, 40)
-execute.Parent = frame
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(92, 99, 125)
+TextBox.BackgroundTransparency = 0.250
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0, 0, 1, 0)
+TextBox.Size = UDim2.new(0, 551, 0, 222)
+TextBox.Font = Enum.Font.Unknown
+TextBox.PlaceholderText = "hi"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 16.000
+TextBox.TextXAlignment = Enum.TextXAlignment.Left
+TextBox.TextYAlignment = Enum.TextYAlignment.Top
 
-local localScript_2 = Instance.new("LocalScript")
-localScript_2.Name = "LocalScript"
-localScript_2.Parent = execute
+TEXTLOGO.Name = "TEXTLOGO"
+TEXTLOGO.Parent = Frame
+TEXTLOGO.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TEXTLOGO.BackgroundTransparency = 1.000
+TEXTLOGO.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TEXTLOGO.BorderSizePixel = 0
+TEXTLOGO.Position = UDim2.new(0.442831218, 0, 0.13333334, 0)
+TEXTLOGO.Size = UDim2.new(0, 62, 0, 21)
+TEXTLOGO.Font = Enum.Font.Unknown
+TEXTLOGO.Text = "revise"
+TEXTLOGO.TextColor3 = Color3.fromRGB(210, 217, 255)
+TEXTLOGO.TextScaled = true
+TEXTLOGO.TextSize = 14.000
+TEXTLOGO.TextWrapped = true
 
-local bG = Instance.new("Frame")
-bG.Name = "BG"
-bG.BackgroundColor3 = Color3.new(0.247, 0.247, 0.247)
-bG.BorderColor3 = Color3.new()
-bG.Position = UDim2.new(0, 0, 8.4, 0)
-bG.Active = true
-bG.BorderSizePixel = 0
-bG.Size = UDim2.new(0, 551, 0, 54)
-bG.Parent = frame
+BG.Name = "BG"
+BG.Parent = Frame
+BG.Active = true
+BG.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+BG.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BG.BorderSizePixel = 0
+BG.Position = UDim2.new(0, 0, 8.39999866, 0)
+BG.Size = UDim2.new(0, 551, 0, 54)
 
-local smooth_GUI_Dragging_2 = Instance.new("LocalScript")
-smooth_GUI_Dragging_2.Name = "Smooth GUI Dragging"
-smooth_GUI_Dragging_2.Parent = frame
+Execute.Name = "Execute"
+Execute.Parent = Frame
+Execute.BackgroundColor3 = Color3.fromRGB(86, 88, 111)
+Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Execute.BorderSizePixel = 0
+Execute.Position = UDim2.new(0.796733201, 0, 8.60000038, 0)
+Execute.Size = UDim2.new(0, 104, 0, 40)
+Execute.Font = Enum.Font.SourceSans
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+Execute.TextSize = 14.000
 
-local textBox = Instance.new("TextBox")
-textBox.Name = "TextBox"
-textBox.FontFace = Font.new("rbxassetid://16658246179")
-textBox.TextColor3 = Color3.new()
-textBox.BorderColor3 = Color3.new()
-textBox.Text = ""
-textBox.BackgroundColor3 = Color3.new(0.361, 0.388, 0.49)
-textBox.TextSize = 16
-textBox.TextYAlignment = Enum.TextYAlignment.Top
-textBox.BackgroundTransparency = 0.25
-textBox.Position = UDim2.new(0, 0, 1, 0)
-textBox.TextXAlignment = Enum.TextXAlignment.Left
-textBox.PlaceholderText = "hi"
-textBox.BorderSizePixel = 0
-textBox.Size = UDim2.new(0, 551, 0, 222)
-textBox.Parent = frame
+TextButton.Parent = reviseRequireExecutor
+TextButton.BackgroundColor3 = Color3.fromRGB(81, 85, 111)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.482106686, 0, 0.875148654, 0)
+TextButton.Size = UDim2.new(0, 52, 0, 52)
+TextButton.Font = Enum.Font.Unknown
+TextButton.Text = "revise"
+TextButton.TextColor3 = Color3.fromRGB(194, 195, 255)
+TextButton.TextSize = 18.000
 
-local tEXTLOGO = Instance.new("TextLabel")
-tEXTLOGO.Name = "TEXTLOGO"
-tEXTLOGO.FontFace = Font.new(
-    "rbxassetid://11702779409",
-    Enum.FontStyle.Normal,
-    Enum.FontWeight.Heavy
-)
-tEXTLOGO.TextColor3 = Color3.new(0.824, 0.851, 1)
-tEXTLOGO.Text = "revise"
-tEXTLOGO.BackgroundColor3 = Color3.new(1, 1, 1)
-tEXTLOGO.BorderSizePixel = 0
-tEXTLOGO.TextScaled = true
-tEXTLOGO.BackgroundTransparency = 1
-tEXTLOGO.Position = UDim2.new(0.443, 0, 0.133, 0)
-tEXTLOGO.BorderColor3 = Color3.new()
-tEXTLOGO.TextWrapped = true
-tEXTLOGO.TextSize = 14
-tEXTLOGO.Size = UDim2.new(0, 62, 0, 21)
-tEXTLOGO.Parent = frame
+-- Scripts:
 
-local executeEvent = Instance.new("RemoteEvent")
-executeEvent.Name = "ExecuteEvent"
-executeEvent.Parent = frame
+local function YNCU_fake_script() -- Frame.Smooth GUI Dragging 
+	local script = Instance.new('LocalScript', Frame)
 
-local script = Instance.new("Script")
-script.Name = "Script"
-script.Parent = executeEvent
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
+	
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
+	
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	runService.Heartbeat:Connect(Update)
+	
+end
+coroutine.wrap(YNCU_fake_script)()
+local function UUYPP_fake_script() -- Execute.LocalScript 
+	local script = Instance.new('LocalScript', Execute)
 
-local loadstring = Instance.new("ModuleScript")
-loadstring.Name = "Loadstring"
-loadstring.Parent = script
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.ExecuteEvent:FireServer(script.Parent.Parent.TextBox.Text)
+		end)
+end
+coroutine.wrap(UUYPP_fake_script)()
+local function WSXPCM_fake_script() -- TextButton.Smooth GUI Dragging 
+	local script = Instance.new('LocalScript', TextButton)
 
-local rerubi = Instance.new("ModuleScript")
-rerubi.Name = "Rerubi"
-rerubi.Parent = loadstring
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
+	
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
+	
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	runService.Heartbeat:Connect(Update)
+	
+end
+coroutine.wrap(WSXPCM_fake_script)()
+local function OKESGL_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
 
-local credits = Instance.new("Script")
-credits.Name = "Credits"
-credits.Enabled = false
-credits.Disabled = true
-credits.Parent = loadstring
+	--You dont need to delete this text.
+	--PUT INSIDE a BUTTON in StarterGui
+	--Make sure to make a frame for the menu to pop up then go to properties > Visible [Off]
+	script.Parent.MouseButton1Click:Connect (function()
+		script.Parent.Parent.Frame.Visible = not script.Parent.Parent.Frame.Visible
+	end)
+end
+coroutine.wrap(OKESGL_fake_script)()
 
-local luaZ = Instance.new("ModuleScript")
-luaZ.Name = "LuaZ"
-luaZ.Parent = loadstring
-
-local luaU = Instance.new("ModuleScript")
-luaU.Name = "LuaU"
-luaU.Parent = loadstring
-
-local luaX = Instance.new("ModuleScript")
-luaX.Name = "LuaX"
-luaX.Parent = loadstring
-
-local luaY = Instance.new("ModuleScript")
-luaY.Name = "LuaY"
-luaY.Parent = loadstring
-
-local luaP = Instance.new("ModuleScript")
-luaP.Name = "LuaP"
-luaP.Parent = loadstring
-
-local luaK = Instance.new("ModuleScript")
-luaK.Name = "LuaK"
-luaK.Parent = loadstring
